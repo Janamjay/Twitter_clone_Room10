@@ -1,0 +1,36 @@
+.main_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner_container{
+    margin-top: 3rem;
+    width: 35%;
+    box-shadow: 0 0 10px grey;
+    padding: 3rem;
+    padding-top: 10px;
+    border-radius: 14px;
+}
+.content{
+    width: 100%;
+}
+.content h1{
+    padding: 1rem 0;
+    text-align: center;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.image{
+    display: flex;
+    justify-content: center;
+}
+.image img{
+    width: 2rem;
+    height: 2rem;
+}
