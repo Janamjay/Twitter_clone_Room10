@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import logo from "../images/logo.png";
-import {BsApple} from 'react-icons/bs'
-import {FcGoogle} from 'react-icons/fc'
+import { BsApple } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 import log from "./login.module.css";
 import { Button, TextField } from "@mui/material";
+import Divider from '@mui/material/Divider';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -53,33 +54,36 @@ const Login = () => {
         <div className={log.content}>
           <h1>Sign in to Twitter</h1>
           <div className={log.apple}>
-          <Button
+            <Button
               className={log.forget}
               variant="contained"
               sx={{
                 display: "block",
                 borderRadius: "20px",
-                margin:"auto",
+                margin: "auto",
                 color: "black",
                 backgroundColor: "white",
                 outline: "none",
                 border: "none",
                 width: "50%",
                 marginBottom: "10px",
-                textTransform:"none",
+                textTransform: "none",
                 "&:hover": {
-                  backgroundColor:"white",
+                  backgroundColor: "white",
                 },
               }}
             >
-             <span><FcGoogle/></span> Sign in with Google
+              <span>
+                <FcGoogle />
+              </span>
+              Sign in with Google
             </Button>
             <Button
               className={log.forget}
               variant="contained"
               sx={{
                 display: "block",
-                margin:"auto",
+                margin: "auto",
                 borderRadius: "20px",
                 color: "black",
                 backgroundColor: "white",
@@ -87,17 +91,20 @@ const Login = () => {
                 border: "none",
                 width: "50%",
                 marginBottom: "10px",
-                textTransform:"none",
+                textTransform: "none",
                 "&:hover": {
-                  backgroundColor:"rgb(228, 228, 228)",
+                  backgroundColor: "rgb(228, 228, 228)",
                 },
               }}
             >
-             <span><BsApple/></span> Sign in with Apple
+              <span>
+                <BsApple />
+              </span>
+               Sign in with Apple
             </Button>
           </div>
           <div className={log.divide}>
-             <hr /><p>or </p><hr />
+            <Divider>OR</Divider>
           </div>
           <div className={log.input}>
             <TextField
@@ -134,10 +141,10 @@ const Login = () => {
                 border: "none",
                 margin: "1rem 0",
                 width: "40%",
-                textTransform:"none",
+                textTransform: "none",
                 "&:hover": {
-                  backgroundColor:"black",
-                  color:"red"
+                  backgroundColor: "black",
+                  color: "red",
                 },
               }}
               onClick={handleLogin}
@@ -156,9 +163,9 @@ const Login = () => {
                 marginTop: "0",
                 width: "50%",
                 marginBottom: "10px",
-                textTransform:"none",
+                textTransform: "none",
                 "&:hover": {
-                  backgroundColor:"rgb(228, 228, 228)",
+                  backgroundColor: "rgb(228, 228, 228)",
                 },
               }}
             >
@@ -166,7 +173,7 @@ const Login = () => {
             </Button>
             <div className={log.link}>
               <h3>
-                Don't have an account?{" "}
+                Don't have an account?
                 <Link to="/signup">
                   <span>Sign up</span>
                 </Link>
