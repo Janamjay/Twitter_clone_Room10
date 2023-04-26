@@ -3,14 +3,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(208, 205, 205);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 .inner_container{
-    margin-top: 2rem;
-    width: 35%;
+    overflow-y: scroll;
+    height: 30rem;
+    margin: 2rem 0;
+    width: 40%;
     box-shadow: 0 0 10px grey;
     padding-top: 10px;
     border-radius: 14px;
+    background-color: white;
 }
+::-webkit-scrollbar {
+    max-height: 50%;
+    height: 50%;
+  }
 .content{
     width: 100%;
 }

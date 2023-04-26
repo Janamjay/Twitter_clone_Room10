@@ -32,7 +32,10 @@ const Footer = () => {
             borderRadius:"14px",
             outline:"none",
             textTransform:"none",
-
+            "&:hover": {
+              backgroundColor:"rgb(228, 228, 228)",
+              color:"black"
+            },
 
         }}
         >Sign up</Button>
