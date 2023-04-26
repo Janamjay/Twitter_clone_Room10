@@ -137,6 +137,7 @@ const Login = () => {
                 textTransform:"none",
                 "&:hover": {
                   backgroundColor:"black",
+                  color:"red"
                 },
               }}
               onClick={handleLogin}
