@@ -65,8 +65,9 @@ const Signup = () => {
           <img src={logo} alt="logoimage" />
         </div>
         <div className={sign.content}>
-          <h1>Sign in to Twitter</h1>
+          <h1>Join Twitter today</h1>
           <div className={sign.input}>
+
             <TextField
               id="outlined-basic-name"
               value={name}
@@ -76,7 +77,7 @@ const Signup = () => {
               onChange={(event) => setName(event.target.value)}
               sx={{
                 display: "block",
-                margin: "2rem 0",
+                margin: "1rem 0",
                 marginBottom:"0px"
               }}
             />
@@ -91,7 +92,7 @@ const Signup = () => {
               sx={{
                 display: "block",
                 marginTop:"0",
-                margin: "2rem 0",
+                margin: "1rem 0",
               }}
             />
 
@@ -111,15 +112,21 @@ const Signup = () => {
               variant="contained"
               sx={{
                 borderRadius: "10px",
-                backgroundColor: "grey",
+                backgroundColor: "black",
                 outline: "none",
                 border: "none",
-                margin: "2rem 0",
+                margin: "1rem 0",
+                width:"30%",
+                textTransform:"none",
+                "&:hover": {
+                  backgroundColor:"black",
+                },
               }}
               onClick={handleSignUp}
             >
               Sign Up
             </Button>
+           
           </div>
         </div>
       </div>
