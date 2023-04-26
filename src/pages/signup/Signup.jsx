@@ -8,6 +8,12 @@ const Signup = () => {
       <NavLink to="/"><button>home</button></NavLink>
       <NavLink to="/login"><button>Login</button></NavLink>
       <NavLink to="/signup"><button>Signup</button></NavLink>
+
+
+      <input type='email' placeholder='enter email' ></input>
+      <input type='password' placeholder='enter password' ></input>
+      <input type='pas' placeholder='enter password' ></input>
+
     </div>
   )
 }
