@@ -22,7 +22,7 @@ const Footer = () => {
             textTransform:"none"
         }}
         >Log in</Button></NavLink>
-       <NavLink to="/signup">
+       <NavLink to="/step1">
        <Button  className={foot.sign}
         variant="contained"
         sx={{
