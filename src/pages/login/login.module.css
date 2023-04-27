@@ -53,15 +53,6 @@
 .link a {
   text-decoration: none;
 }
-.divide{
-    display: flex;
-}
-.divide hr{
-    width: 50%;
-    height: 0;
-    margin-top: 10px;
-}
-.divide p{
-    margin-right: 5px;
-    margin-left: 5px;
+.forget span{
+  padding-right: 5px;
 }
