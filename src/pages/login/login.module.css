@@ -53,4 +53,6 @@
 .link a {
   text-decoration: none;
 }
-
+.forget span{
+  padding-right: 5px;
+}
