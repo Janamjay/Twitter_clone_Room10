@@ -1,5 +1,6 @@
 import React,{useEffect} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import TrendingSection from "./trendingsection/TrendingSection";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Home = () => {
       <NavLink to="/signup">
         <button>Signup</button>
       </NavLink>
+      <TrendingSection/>
     </div>
   );
 };
