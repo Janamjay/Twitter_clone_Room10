@@ -65,7 +65,7 @@ const Login = () => {
                 backgroundColor: "white",
                 outline: "none",
                 border: "none",
-                width: "50%",
+                width: "100%",
                 marginBottom: "10px",
                 textTransform: "none",
                 "&:hover": {
@@ -89,7 +89,7 @@ const Login = () => {
                 backgroundColor: "white",
                 outline: "none",
                 border: "none",
-                width: "50%",
+                width: "100%",
                 marginBottom: "10px",
                 textTransform: "none",
                 "&:hover": {
@@ -113,6 +113,8 @@ const Login = () => {
               label="Email"
               type="email"
               variant="outlined"
+              size="small"
+              fullWidth
               onChange={(event) => setEmail(event.target.value)}
               sx={{
                 display: "block",
@@ -126,6 +128,8 @@ const Login = () => {
               type="password"
               label="Password"
               variant="outlined"
+              size="small"
+              fullWidth
               onChange={(event) => setPassword(event.target.value)}
               sx={{
                 display: "block",
@@ -140,7 +144,7 @@ const Login = () => {
                 outline: "none",
                 border: "none",
                 margin: "1rem 0",
-                width: "40%",
+                width: "100%",
                 textTransform: "none",
                 "&:hover": {
                   backgroundColor: "black",
@@ -161,7 +165,7 @@ const Login = () => {
                 outline: "none",
                 border: "none",
                 marginTop: "0",
-                width: "50%",
+                width: "100%",
                 marginBottom: "10px",
                 textTransform: "none",
                 "&:hover": {
@@ -174,7 +178,7 @@ const Login = () => {
             <div className={log.link}>
               <h3>
                 Don't have an account?
-                <Link to="/signup">
+                <Link to="/step1">
                   <span>Sign up</span>
                 </Link>
               </h3>
