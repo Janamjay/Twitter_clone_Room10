@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
-
 import HomeIcon from "@mui/icons-material/Home";
 import TagIcon from "@mui/icons-material/Tag";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";

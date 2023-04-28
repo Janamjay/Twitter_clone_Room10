@@ -175,7 +175,7 @@ const Login = () => {
               <div className={log.link}>
                 <h3>
                   Don't have an account?
-                  <Link to="/step1">
+                  <Link to="/signup">
                     <span>Sign up</span>
                   </Link>
                 </h3>
