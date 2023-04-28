@@ -1,6 +1,9 @@
 import React,{useEffect} from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {useNavigate} from 'react-router-dom'
+import Sidebar from "./Sidebar/Sidebar";
 import TrendingSection from "./trendingsection/TrendingSection";
+import Footer from '../../footer/Footer'
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,18 +16,10 @@ const Home = () => {
     }
   }, []);
   return (
-    <div>
-      <h1>this is home</h1>
-      <NavLink to="/">
-        <button>home</button>
-      </NavLink>
-      <NavLink to="/login">
-        <button>Login</button>
-      </NavLink>
-      <NavLink to="/signup">
-        <button>Signup</button>
-      </NavLink>
+    <div> 
+      <Sidebar/>
       <TrendingSection/>
+      <Footer/>
     </div>
   );
 };

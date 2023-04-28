@@ -7,7 +7,7 @@ import s1 from "./step1.module.css";
 import { Button } from "@mui/material";
 import Divider from "@mui/material/Divider";
 
-const Step1 = () => {
+const Step1 = (props) => {
   return (
     <div className={s1.main_container}>
       <div className={s1.inner_container}>
@@ -69,39 +69,38 @@ const Step1 = () => {
             <Divider>OR</Divider>
           </div>
           <div className={s1.input}>
-            <Link to="/signup?step=2">
-              <Button
-                variant="contained"
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "20px",
+            <Button
+              onClick={props.onClick}
+              variant="contained"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "20px",
+                backgroundColor: "black",
+                outline: "none",
+                border: "none",
+                margin: "1rem 0",
+                width: "100%",
+                textTransform: "none",
+                "&:hover": {
                   backgroundColor: "black",
-                  outline: "none",
-                  border: "none",
-                  margin: "1rem 0",
-                  width: "100%",
-                  textTransform: "none",
-                  "&:hover": {
-                    backgroundColor: "black",
-                    color: "grey",
-                  },
-                }}
-              >
-                Create account
-              </Button>
-            </Link>
+                  color: "grey",
+                },
+              }}
+            >
+              Create account
+            </Button>
           </div>
           <div className={s1.content}>
             <p>
-              By signing up, you agree to the <span>Terms of Service</span> and{" "}
+              By signing up, you agree to the <span>Terms of Service</span> and
               <span>Privacy Policy</span>, including <span>Cookie Use.</span>
             </p>
           </div>
           <div className={s1.link}>
             <h3>
-              Don't have an account?
+              Already have an account?
               <Link to="/login">
                 <span>Log in</span>
               </Link>
