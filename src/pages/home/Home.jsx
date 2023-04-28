@@ -1,12 +1,11 @@
-
-
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
 import Sidebar from "./Sidebar/Sidebar";
-
-
-import React,{useEffect} from "react";
-import { NavLink, useNavigate } from "react-router-dom";
 import TrendingSection from "./trendingsection/TrendingSection";
-
+import Footer from "../../footer/Footer";
+import Feeds from "./Feeds/Feeds";
+import Tweet from "./Tweet/Tweet";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,25 +18,32 @@ const Home = () => {
     }
   }, []);
   return (
-    <div>
-
-      
-     
-      <Sidebar/>
-     
-
-      <h1>this is home</h1>
-      <NavLink to="/">
-        <button>home</button>
-      </NavLink>
-      <NavLink to="/login">
-        <button>Login</button>
-      </NavLink>
-      <NavLink to="/signup">
-        <button>Signup</button>
-      </NavLink>
-      <TrendingSection/>
-
+    <div className="home_main">
+      <div className= "home_leftSide">
+        <Sidebar />
+      </div>
+      <div className="home_main_container">
+        {/* TOPBAR of Home page */}
+        <section className="home_topbar_section">
+          <h2>Home</h2>
+          <div className="home_topbar_innerDiv">
+            <div>
+              <span>For you</span>
+            </div>
+            <div>
+              <span>Following</span>
+            </div>
+          </div>
+        </section>
+        <div className="tweet">
+          <Tweet/>
+          </div>
+        <Feeds />
+      </div>
+      <div className="trend">
+       
+        <TrendingSection />
+      </div>
     </div>
   );
 };

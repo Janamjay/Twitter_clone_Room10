@@ -14,12 +14,14 @@
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
+    "@mui/joy": "^5.0.0-alpha.77",
     "@mui/material": "^5.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0",
+    "recoil": "^0.7.7",
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {

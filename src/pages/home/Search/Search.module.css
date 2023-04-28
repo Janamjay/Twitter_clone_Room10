@@ -1,0 +1,27 @@
+.searchContainer {
+    display: flex;
+    margin-top: 10px;
+    background-color: #f5f8fa;
+    padding: 12px 8px ;
+    border-radius: 50px;
+    margin-left: 1rem;
+    /* margin-left: 1000px; */
+  }
+  
+  .searchButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .searchButton svg{
+    margin-left: 3rem;
+  }
+  
+  .searchInput {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    margin-left: 14px;
+    width: 100%;
+    outline: none;
+  }
