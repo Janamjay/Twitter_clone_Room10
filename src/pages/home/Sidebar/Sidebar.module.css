@@ -4,10 +4,12 @@
   top: 0;
   flex-direction: column;
   align-items: flex-start;
+
   /* width: 30%; equivalent to 275px */
+
   background-color: #fff;
   padding: 0.9375rem; /* equivalent to 15px */
-  margin-left: 1.25rem;
+  margin-left: 2.875rem;
 }
 
 .sidebar__twitterIcons {
@@ -20,20 +22,21 @@
   align-items: center;
   font-size: 1.375rem ; /* equivalent to 15px */
   color: #1c2938;
-  padding: 10px 0;
+  padding: 10px;
    /* equivalent to 10px 20px */
   border-radius: 3.125rem; /* equivalent to 50px */
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   margin:  0;
+  margin-bottom: 10px;
 
 }
 
  .icons  p:hover {
-  background-color:gray;
+  background-color:rgb(199, 192, 192);
 }
 
-.icons p span
+
 
  .icons p span {
   display: inline-flex;
