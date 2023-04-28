@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import s4 from "./step4.module.css";
 import { Button, TextField } from "@mui/material";
-import { Link } from "react-router-dom";
+import { globalUserObj } from "../recoil";
+import { useRecoilState } from "recoil";
 
-const Step4 = () => {
-    
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [date, setDate] = useState("");
-    
+const Step4 = (props) => {
+  const [email, setEmail] = useState("");
+  const[globalData,setGobalData]=useRecoilState(globalUserObj)
+ 
+
+  function handleNext(){
+    if(!(email.includes("@"))){
+      swal("Alert", "Enter a valid Email!!", "warning");
+    }
+    else{ 
+      const user={
+      userEmail:email
+    }
+      setGobalData({...globalData,...user}); 
+      props.onClick()
+    }
+   
+  }
   return (
     <div className={s4.main_container}>
       <div className={s4.inner_container}>
@@ -19,13 +32,13 @@ const Step4 = () => {
         <div className={s4.input}>
           <TextField
             id="outlined-basic-name"
-            value={name}
+            value={globalData.userFullName}
             label="Name"
             variant="outlined"
             type="text"
             size="small"
             fullWidth
-            onChange={(event) => setName(event.target.value)}
+            disabled={true}
             sx={{
               display: "block",
               margin: "1rem 0",
@@ -35,13 +48,13 @@ const Step4 = () => {
 
           <TextField
             id="outlined-basic-email"
-            value={phone}
+            value={globalData.userPhone}
             label="Phone"
             type="phone"
             variant="outlined"
             size="small"
             fullWidth
-            onChange={(event) => setPhone(event.target.value)}
+            disabled={true}
             sx={{
               display: "block",
               marginTop: "0",
@@ -50,13 +63,15 @@ const Step4 = () => {
           />
           <TextField
             id="outlined-basic-email"
-            value={date}
-            label="Date of birth"
+            value={email}
+            label="Email"
             type="text"
             variant="outlined"
             size="small"
             fullWidth
-            onChange={(event) => setDate(event.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
+            helperText={!email ? "Email is required": ""}
+            error={!email}
             sx={{
               display: "block",
               marginTop: "0",
@@ -68,8 +83,7 @@ const Step4 = () => {
             <p>By signing up, you agree to the <span>Terms of Service</span> and <span>Privacy Policy</span>, including <span>Cookie Use</span>. Twitter may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy, like keeping your account secure and personalizing our services, including ads. <span>Learn more</span>. Others will be able to find you by email or phone number, when provided, unless you choose otherwise <span>here</span>.</p>
         </div>
         <div className={s4.next}>
-          <Link to="/signup?step=5">
-            <Button
+            <Button onClick={()=>{handleNext()}}
               variant="contained"
               sx={{
                 display: "flex",
@@ -92,7 +106,6 @@ const Step4 = () => {
             >
               Sign up
             </Button>
-          </Link>
         </div>
       </div>
     </div>

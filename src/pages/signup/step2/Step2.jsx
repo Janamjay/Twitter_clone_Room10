@@ -1,13 +1,32 @@
 import React, { useState } from "react";
 import s2 from "./step2.module.css";
 import { Button, TextField } from "@mui/material";
-import { Link } from "react-router-dom";
+import { globalUserObj } from "../recoil";
+import { useRecoilState } from "recoil";
 import DateSelector from "./DateSelector";
+import swal from "sweetalert";
 
-const Step2 = () => {
+const Step2 = (props) => {
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-
+  const[globalData,setGobalData]=useRecoilState(globalUserObj)
+ 
+  function handleNext(){
+    if(!(name.length>=3)){
+      swal("Alert", "Name should be greater than 3 Character!!", "warning");
+    }else if(!(phone.length===10)){
+      swal("Alert", "Number should be valid!!", "warning");
+    }
+    else{ 
+      const user={
+      userFullName:name,userPhone:phone
+    }
+      setGobalData({...globalData,...user}); 
+      props.onClick()
+    } 
+  }
+  
   return (
     <div className={s2.main_container}>
       <div className={s2.inner_container}>
@@ -24,7 +43,9 @@ const Step2 = () => {
             type="text"
             size="small"
             fullWidth
+            helperText={!name ? "Name is Required" : ""}
             onChange={(event) => setName(event.target.value)}
+            error={!name}
             sx={{
               display: "block",
               margin: "1rem 0",
@@ -41,6 +62,8 @@ const Step2 = () => {
             size="small"
             fullWidth
             onChange={(event) => setPhone(event.target.value)}
+            helperText={!phone ? "Phone number is Required" : ""}
+            error={!phone}
             sx={{
               display: "block",
               marginTop: "0",
@@ -59,8 +82,7 @@ const Step2 = () => {
           </div>
         </div>
         <div className={s2.next}>
-          <Link to="/signup?step=3">
-            <Button
+            <Button onClick={()=>{handleNext()}}
               variant="contained"
               sx={{
                 display: "flex",
@@ -83,7 +105,6 @@ const Step2 = () => {
             >
               Next
             </Button>
-          </Link>
         </div>
       </div>
     </div>
