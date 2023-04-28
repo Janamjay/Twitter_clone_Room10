@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Sidebar from "./Sidebar/Sidebar";
-import TrendingSection from "./trendingsection/TrendingSection";
-import Footer from "../../footer/Footer";
+// import TrendingSection from "./trendingsection/TrendingSection";
+import RightSide from "./RightComponent/RightSide";
 import Feeds from "./Feeds/Feeds";
 import Tweet from "./Tweet/Tweet";
 
@@ -22,7 +22,7 @@ const Home = () => {
   return (
 
     <div className="home_main">
-      <div className= "home_leftSide">
+      <div className="home_leftSide">
         <Sidebar />
       </div>
       <div className="home_main_container">
@@ -39,13 +39,13 @@ const Home = () => {
           </div>
         </section>
         <div className="tweet">
-          <Tweet/>
-          </div>
+          <Tweet />
+        </div>
         <Feeds />
       </div>
       <div className="trend">
-       
-        <TrendingSection />
+        <RightSide />
+        {/* <TrendingSection /> */}
       </div>
 
     </div>
