@@ -48,7 +48,7 @@ const Step5 = () => {
             value={password}
             label="Password"
             variant="outlined"
-            type="text"
+            type="password"
             size="small"
             fullWidth
             onChange={(event) => setPassword(event.target.value)}
