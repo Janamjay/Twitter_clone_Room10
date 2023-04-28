@@ -10,13 +10,19 @@ import Step2 from './pages/signup/step2/Step2'
 import Step3 from './pages/signup/step3/Step3'
 import Step4 from './pages/signup/step4/Step4'
 import Step5 from './pages/signup/step5/Step5'
+import ExplorePage from './pages/home/Sidebar/ExplorePage'
+import Notifications from './pages/home/Sidebar/Notifications'
+import Messages from './pages/home/Sidebar/Messages'
+import Bookmarks from './pages/home/Sidebar/Bookmarks'
+import TwitterBlue from './pages/home/Sidebar/TwitterBlue'
 
 
 function App() {
 
   return (
     <>
-      <Routes>
+    <div className='App'>
+    <Routes>
         <Route path='/' element={<Home/>}>Home</Route>
         <Route path='/login' element={<Login/>}>Login</Route>
         <Route path='/step1' element={<Step1/>}>Signup</Route>
@@ -25,7 +31,11 @@ function App() {
         <Route path='/step4' element={<Step4/>}>Signup</Route>
         <Route path='/step5' element={<Step5/>}>Signup</Route>
         <Route path='/signup' element={<Signup/>}>Signup</Route>
+  
       </Routes>
+
+    </div>
+     
       {/* <Footer/> */}
     </>
   )

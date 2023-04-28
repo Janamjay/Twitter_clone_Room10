@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 25%; /* equivalent to 275px */
+  width: 22%; /* equivalent to 275px */
   background-color: #fff;
   border-right: 0.0625rem solid #e6ecf0; /* equivalent to 1px */
   padding: 0.9375rem; /* equivalent to 15px */
-  margin-left: 1.25rem;
+  margin-left: 2.875rem;
 }
 
 .sidebar__twitterIcons {
@@ -29,10 +29,10 @@
 }
 
  .icons  p:hover {
-  background-color:gray;
+  background-color:rgb(199, 192, 192);
 }
 
-.icons p span
+
 
  .icons p span {
   display: inline-flex;
