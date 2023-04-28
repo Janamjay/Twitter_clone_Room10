@@ -34,14 +34,6 @@ export default function Tweet() {
           outline:"none"
         }}
         />
-
-        {/* <input
-          className={styles.inputField}
-          onChange={(e) => setTweetMessage(e.target.value)}
-          value={tweetMessage}
-          placeholder="What's happening?"
-          type="text"
-        /> */}
       </div>
       <div className={styles.iconsContainer}>
        <div className={styles.icons}>

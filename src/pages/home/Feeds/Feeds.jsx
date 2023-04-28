@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import './Feeds.css'
-
 import { TweetData } from '../../../utils/TweetData';
-
 import Avatar from '@mui/material/Avatar';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -15,6 +13,7 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 export default function Feeds() {
 
     const [likeCount, setLikeCount] = useState(0)
+    const [isLoad ,setIsLoad]=useState(20)
 
     function handleLikeClick(elem) {
         if(elem.isLiked === true){
@@ -29,12 +28,14 @@ export default function Feeds() {
 
         // console.log(elem.isLiked);
     }
-
+    function handleOnNext(){
+        setIsLoad(isLoad+20)
+    }
     return (
 
         <>
         {
-            TweetData.filter((e, i) => i < 20).map((elem, i) => {
+            TweetData.filter((e, i) => i < isLoad).map((elem, i) => {
                 return (
                     <div className='feeds_main_container' key={elem.id}>
                         <div>
@@ -43,7 +44,7 @@ export default function Feeds() {
                         <section className='feeds_content_section' >
                             <div className='feeds_content_header'>
                                 <div>
-                                    <b>{elem.tweetedBy.name}</b> <VerifiedIcon fontSize='small' htmlColor='#2196f3' /> &nbsp; @{elem.tweetedBy.name} . 15h
+                                    <b>{elem.tweetedBy.name}</b> <VerifiedIcon fontSize='small' htmlColor='#2196f3' /> &nbsp; @{elem.tweetedBy.name} . 5h
                                 </div>
                                 <div><MoreHorizIcon /></div>
                             </div>
@@ -60,7 +61,7 @@ export default function Feeds() {
                                     <FavoriteBorderOutlinedIcon htmlColor={ elem.isLiked ? 'red' : "" } />
                                     <span>{elem.likeCount}</span>
                                 </p>
-                                <p><BarChartRoundedIcon /><span>205.2K</span></p>
+                                <p><BarChartRoundedIcon /><span>100.5K</span></p>
                             </div>
                         </section>
                     </div>
@@ -68,7 +69,9 @@ export default function Feeds() {
             })
         }
 
-        <button>Load More</button>
+       <div className='btn_loader'>
+       <button className ="loader" onClick={handleOnNext}>Load More</button>
+       </div>
         </>
 
 

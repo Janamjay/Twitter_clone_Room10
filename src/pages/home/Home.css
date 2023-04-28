@@ -4,8 +4,9 @@
 }
 
 .home_leftSide{
-    width: 23%;
+    width: 20%;
 }
+
 .home_main_container{
     width: 50%;
     border-left: 1px solid grey; 
@@ -47,5 +48,5 @@
     font-size: 18px;
 }
 .trend{
-    width: 25%;
+    width: 30%;
 }
