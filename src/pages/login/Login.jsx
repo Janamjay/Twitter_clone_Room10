@@ -6,7 +6,7 @@ import { BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import log from "./login.module.css";
 import { Button, TextField } from "@mui/material";
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,13 +21,13 @@ const Login = () => {
   }, []);
 
   function handleLogin() {
-    if (email === "" || password === "") {
+    if (email.length === 0 || password.length === 0) {
       swal("Alert", "Please Fill the required Input Field!", "warning");
     } else if (userList !== null) {
       const userFind = userList.find(
         (x) =>
-          (x.email === email || x.email === "") &&
-          (x.password === password || x.password === "")
+          (x.userEmail === email) &&
+          (x.userPassword === password )
       );
       if (!userFind) {
         swal("Alert", "No user found. Please sign up!!", "warning");
@@ -35,14 +35,14 @@ const Login = () => {
         setPassword("");
       } else {
         swal("Great Job !!", "You are Successfully Login!!", "success");
+        localStorage.setItem("login-success", "true");
         nav("/");
       }
     } else {
       swal("Alert", "Please SignUp First!!", "warning");
     }
 
-    localStorage.setItem("login-success", "true");
-    navigate("/");
+   
   }
   return (
     <div className={log.main_container}>
@@ -99,7 +99,7 @@ const Login = () => {
               <span>
                 <BsApple />
               </span>
-               Sign in with Apple
+              Sign in with Apple
             </Button>
           </div>
           <div className={log.divide}>
