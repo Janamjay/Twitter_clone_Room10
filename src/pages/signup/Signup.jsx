@@ -80,6 +80,7 @@ const Signup = () => {
     }
   
   return (
+
     <div className={sign.main_container}>
       <div className={sign.inner_container}>
         <div className={sign.image}>
@@ -151,6 +152,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

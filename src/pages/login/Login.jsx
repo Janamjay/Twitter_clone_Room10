@@ -45,6 +45,7 @@ const Login = () => {
     navigate("/");
   }
   return (
+
     <div className={log.main_container}>
       <div className={log.inner_container}>
         <div className={log.image}>
@@ -185,6 +186,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };
