@@ -1,10 +1,13 @@
 .Sidebar {
   display: flex;
+  position: sticky;
+  top: 0;
   flex-direction: column;
   align-items: flex-start;
-  width: 22%; /* equivalent to 275px */
+
+  /* width: 30%; equivalent to 275px */
+
   background-color: #fff;
-  border-right: 0.0625rem solid #e6ecf0; /* equivalent to 1px */
   padding: 0.9375rem; /* equivalent to 15px */
   margin-left: 2.875rem;
 }
@@ -19,12 +22,13 @@
   align-items: center;
   font-size: 1.375rem ; /* equivalent to 15px */
   color: #1c2938;
-  padding: 10px 0;
+  padding: 10px;
    /* equivalent to 10px 20px */
   border-radius: 3.125rem; /* equivalent to 50px */
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   margin:  0;
+  margin-bottom: 10px;
 
 }
 

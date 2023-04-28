@@ -9,10 +9,20 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Button } from "@mui/material";
-import { Navigate, useNavigate } from "react-router";
+import {  useNavigate } from "react-router";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+
+
+
 
 
 const Sidebar = () => {
+
+
+ 
+  
+  
 
 const navigate=useNavigate()
 function handleNavigate(path){
@@ -34,7 +44,9 @@ function handleNavigate(path){
           />
 
           <div className={styles.icons}>
+
             <p onClick={()=>handleNavigate("/")}>
+
               <span>
                 <HomeIcon
                   sx={{
@@ -47,19 +59,24 @@ function handleNavigate(path){
               Home
             </p>
 
+
             <p onClick={()=>handleNavigate("/explore")}>
+
               <span>
                 <TagIcon />
               </span>
               Explore
             </p>
 
+
             <p onClick={()=>handleNavigate("/notifications")}>
+
               <span>
                 <NotificationsNoneIcon />
               </span>
               Notifications
             </p>
+
 
             <p onClick={()=>handleNavigate("/messages")}>
               <span>
@@ -69,11 +86,13 @@ function handleNavigate(path){
             </p>
 
             <p onClick={()=>handleNavigate("/bookmarks")}>
+
               <span>
                 <BookmarkBorderIcon />
               </span>
               Bookmarks
             </p>
+
 
             <p onClick={()=>handleNavigate("/twitterblue")}>
               <span>
@@ -83,13 +102,18 @@ function handleNavigate(path){
             </p>
 
             <p onClick={()=>handleNavigate("/profiles")}>
+
               <span>
                 <PermIdentityIcon />
               </span>
               profiles
             </p>
 
+
             <p onClick={()=>handleNavigate("/more")}>
+
+        
+
               <span>
                 <MoreHorizIcon />
               </span>
@@ -99,6 +123,7 @@ function handleNavigate(path){
 
           <Button
             className={styles.sidear_button}
+          
             sx={{
               backgroundColor: "#51b6f5",
               color: "white",
@@ -122,8 +147,8 @@ function handleNavigate(path){
             className={styles.sidebar__lastButton}
             sx={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
+              alignItems: "left",
+              justifyContent:"left",
               backgroundColor: "transperent",
               color: "#8899a6",
               fontSize: "1rem" /* 16px */,
@@ -131,18 +156,23 @@ function handleNavigate(path){
               textTransform: "none",
               borderRadius: "1.875rem" /* 30px */,
               height: "3.125rem" /* 50px */,
-              width: "100%",
+              // width: "110%",
               paddingLeft: "2rem" /* 32px */,
-              marginTop: "2rem",
+
+              marginTop: "3rem",
+
             }}
           >
-            <PermIdentityIcon
+            <AccountCircleIcon
               sx={{
                 marginRight: "1rem",
-                fontSize: "1.5rem" /* 24px */,
+                fontSize: "1.25rem" /* 24px */,
+               
               }}
             />
-            username username...
+
+            username
+
           </Button>
         </div>
       </div>
