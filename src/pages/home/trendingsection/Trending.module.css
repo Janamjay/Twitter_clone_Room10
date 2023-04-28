@@ -1,0 +1,11 @@
+.trend{
+	justify-content: right;
+  text-align: left;
+  width: 20%;
+  height: 20rem;
+  border: 1px solid green;
+  padding: 1rem 1rem 4rem;
+  margin: 20px;
+  position: absolute;
+  right: 0px;
+}
