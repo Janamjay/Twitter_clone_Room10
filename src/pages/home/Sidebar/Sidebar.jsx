@@ -6,12 +6,29 @@ import TagIcon from "@mui/icons-material/Tag";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import ListAltIcon from "@mui/icons-material/ListAlt";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Button } from "@mui/material";
+import {  useNavigate } from "react-router";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+
+
+
+
 
 const Sidebar = () => {
+
+
+ 
+  
+  
+
+const navigate=useNavigate()
+function handleNavigate(path){
+   navigate(path)
+}
+
   return (
     <>
       <div className={styles.Sidebar}>
@@ -20,14 +37,16 @@ const Sidebar = () => {
             className={styles.sidebar_twittericon}
             sx={{
               color: "#51b6f5 ",
-              marginLeft: "2rem",
+              marginLeft: "0rem",
               fontSize: "2.1875rem",
               justifyContent: "center",
             }}
           />
 
           <div className={styles.icons}>
-            <p>
+
+            <p onClick={()=>handleNavigate("/")}>
+
               <span>
                 <HomeIcon
                   sx={{
@@ -40,49 +59,61 @@ const Sidebar = () => {
               Home
             </p>
 
-            <p>
+
+            <p onClick={()=>handleNavigate("/explore")}>
+
               <span>
                 <TagIcon />
               </span>
               Explore
             </p>
 
-            <p>
+
+            <p onClick={()=>handleNavigate("/notifications")}>
+
               <span>
                 <NotificationsNoneIcon />
               </span>
               Notifications
             </p>
 
-            <p>
+
+            <p onClick={()=>handleNavigate("/messages")}>
               <span>
                 <MailOutlineIcon />
               </span>
-              messages
+              Messages
             </p>
 
-            <p>
+            <p onClick={()=>handleNavigate("/bookmarks")}>
+
               <span>
                 <BookmarkBorderIcon />
               </span>
               Bookmarks
             </p>
 
-            <p>
+
+            <p onClick={()=>handleNavigate("/twitterblue")}>
               <span>
-                <ListAltIcon />
+                <TwitterIcon />
               </span>
-              Lists
+              Twitter blue
             </p>
 
-            <p>
+            <p onClick={()=>handleNavigate("/profiles")}>
+
               <span>
                 <PermIdentityIcon />
               </span>
               profiles
             </p>
 
-            <p>
+
+            <p onClick={()=>handleNavigate("/more")}>
+
+        
+
               <span>
                 <MoreHorizIcon />
               </span>
@@ -92,6 +123,7 @@ const Sidebar = () => {
 
           <Button
             className={styles.sidear_button}
+          
             sx={{
               backgroundColor: "#51b6f5",
               color: "white",
@@ -115,27 +147,32 @@ const Sidebar = () => {
             className={styles.sidebar__lastButton}
             sx={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              backgroundColor: "transparent",
+              alignItems: "left",
+              justifyContent:"left",
+              backgroundColor: "transperent",
               color: "#8899a6",
               fontSize: "1rem" /* 16px */,
               fontWeight: "bold",
               textTransform: "none",
               borderRadius: "1.875rem" /* 30px */,
               height: "3.125rem" /* 50px */,
-              width: "100%",
+              // width: "110%",
               paddingLeft: "2rem" /* 32px */,
-              marginTop: "1rem",
+
+              marginTop: "3rem",
+
             }}
           >
-            <PermIdentityIcon
+            <AccountCircleIcon
               sx={{
                 marginRight: "1rem",
-                fontSize: "1.5rem" /* 24px */,
+                fontSize: "1.25rem" /* 24px */,
+               
               }}
             />
+
             username
+
           </Button>
         </div>
       </div>
