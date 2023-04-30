@@ -3,12 +3,12 @@ import Who from './WhoToFollow.module.css'
 function WhoToFollow() {
   const [users, setUsers] = useState([
     {
-      image: "https://pbs.twimg.com/profile_images/1559375475557818368/ub-ZdXDD_400x400.jpg",
-      name: 'Chennai super King', username: 'ChennaiIpl', following: false
+      image: "https://pbs.twimg.com/profile_images/1649977054744674311/Tapx1as2_400x400.jpg",
+      name: 'Royal Challenger Bangalore', username: 'RCBIpl', following: false
     },
     {
-      image: " https://assets.allpngfree.com/storage/thumbnails/samajwadi-party-akhilesh-yadav-hd-photo-png-download--thumbnail-1656521917.jpg",
-      name: 'Akhiles Yadav', username: 'yadavakhilesh', following: false
+      image: " https://pbs.twimg.com/profile_images/1631576724461715456/IhEY3WKZ_400x400.png",
+      name: 'FunctionUp', username: 'functionUp_cohert', following: false
     },
     {
       image: "https://www.indiaonlinepages.com/sports/gifs/sachin-tendulkar.jpg", name: 'Sachin Tendulakr'

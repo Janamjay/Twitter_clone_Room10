@@ -1,13 +1,10 @@
-
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Sidebar from "./Sidebar/Sidebar";
-// import TrendingSection from "./trendingsection/TrendingSection";
 import RightSide from "./RightComponent/RightSide";
 import Feeds from "./Feeds/Feeds";
 import Tweet from "./Tweet/Tweet";
-
 
 const Home = () => {
   const navigate = useNavigate();
@@ -20,7 +17,6 @@ const Home = () => {
     }
   }, []);
   return (
-
     <div className="home_main">
       <div className="home_leftSide">
         <Sidebar />
@@ -45,9 +41,7 @@ const Home = () => {
       </div>
       <div className="trend">
         <RightSide />
-        {/* <TrendingSection /> */}
       </div>
-
     </div>
   );
 };

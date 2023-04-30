@@ -5,7 +5,7 @@ import styles from './Search.module.css';
 export default function Search() {
   return (
     <div className={styles.searchContainer}>
-      <button className={styles.searchButton}><FaSearch /></button>
+      <button className={styles.searchButton}><FaSearch/></button>
       <input className={styles.searchInput} type="text" placeholder="Search Twitter" onChange={(e)=>e.target.value} />
     </div>
   );
