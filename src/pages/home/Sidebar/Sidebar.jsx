@@ -27,6 +27,7 @@ const Sidebar = () => {
   }
   
 
+
   return (
     <>
       <div className={styles.Sidebar}>
@@ -150,20 +151,22 @@ const Sidebar = () => {
               fontSize: "1rem" /* 16px */,
               fontWeight: "bold",
               textTransform: "none",
+              marginTop: "1.5rem",
               borderRadius: "1.875rem" /* 30px */,
               height: "3.125rem" /* 50px */,
-              // width: "110%",
               paddingLeft: "2rem" /* 32px */,
+
               marginTop: "3rem",
             }}
           >
             <AccountCircleIcon
               sx={{
                 marginRight: "1rem",
-                fontSize: "1.25rem" /* 24px */,
+                fontSize: "1rem" /* 16px */,
               }}
             />
-            username
+            username 
+
           </Button>
         </div>
       </div>
