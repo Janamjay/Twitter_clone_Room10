@@ -36,7 +36,7 @@ export default function Feeds() {
       elem["commentCount"] = elem.commentCount + 1;
       setLikeCount(elem.commentCount);
     }
-    console.log(elem.isCommented);
+    // console.log(elem);
   }
   function handleShareClick(elem) {
     if (elem.isShared === true) {
@@ -48,7 +48,7 @@ export default function Feeds() {
       elem["reTweetsCount"] = elem.reTweetsCount + 1;
       setLikeCount(elem.reTweetsCount);
     }
-    console.log(elem.isShared);
+    // console.log(elem.isShared);
   }
 
   function handleOnNext() {

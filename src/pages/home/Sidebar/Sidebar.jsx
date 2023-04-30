@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import HomeIcon from "@mui/icons-material/Home";
@@ -11,23 +11,31 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Dialog, DialogContent } from "@mui/material";
+import { Dialog, DialogContent, Popover } from "@mui/material";
 import Tweet from "../Tweet/Tweet";
-
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const [showTweetBox, setShowTweetBox] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+
+
+
   function handleNavigate(path) {
     navigate(path);
   }
 
+  const Users = JSON.parse(localStorage.getItem("userData")) || [];
+
   function handleTweetClick() {
     setShowTweetBox(true); // show the Tweet component
   }
-  
 
-
+  function handleLogout() {
+    localStorage.removeItem("login-success");
+    navigate("/login");
+  }
   return (
     <>
       <div className={styles.Sidebar}>
@@ -69,7 +77,6 @@ const Sidebar = () => {
               </span>
               Notifications
             </p>
-
             <p onClick={() => handleNavigate("/messages")}>
               <span>
                 <MailOutlineIcon />
@@ -129,19 +136,19 @@ const Sidebar = () => {
           </Button>
 
           <Dialog open={showTweetBox} onClose={() => setShowTweetBox(false)}>
-     <DialogContent 
-        sx={{
-          height:"300px",
-         width:"500px",
-        }}
-     >
-       <Tweet />
-       </DialogContent>
-</Dialog>
-
+            <DialogContent
+              sx={{
+                height: "300px",
+                width: "500px",
+              }}
+            >
+              <Tweet />
+            </DialogContent>
+          </Dialog>
 
           <Button
             className={styles.sidebar__lastButton}
+            onClick={(e) => setAnchorEl(e.currentTarget)}
             sx={{
               display: "flex",
               alignItems: "left",
@@ -151,22 +158,37 @@ const Sidebar = () => {
               fontSize: "1rem" /* 16px */,
               fontWeight: "bold",
               textTransform: "none",
-              marginTop: "1.5rem",
               borderRadius: "1.875rem" /* 30px */,
               height: "3.125rem" /* 50px */,
-              paddingLeft: "2rem" /* 32px */,
-
+              paddingLeft: "2rem",
               marginTop: "3rem",
             }}
           >
             <AccountCircleIcon
               sx={{
                 marginRight: "1rem",
-                fontSize: "1rem" /* 16px */,
+                fontSize: "1rem",
               }}
             />
-            username 
-
+            <span>{Users[0].userFullName}</span>
+            <span>
+              <MoreHorizIcon />
+            </span>
+            <Popover
+              open={Boolean(anchorEl)}
+              anchorEl={anchorEl}
+              onClose={() => setAnchorEl(null)}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <Button onClick={() => handleLogout()}>Logout</Button>
+            </Popover>
           </Button>
         </div>
       </div>
