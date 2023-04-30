@@ -11,7 +11,7 @@ export const TweetData = [
       "likeCount": 576,
       "commentCount": 577,
       "reTweetsCount": 174,
-      "isLiked": true
+      "isLiked": true,
     },
     {
       "id": "516b5ae8-4e50-4e36-93e7-8271580064ec",

@@ -1,38 +1,38 @@
-import React from 'react';
-import Right from './RightSide.module.css';
-import RightLast from './RightLast';
+import React from "react";
+import Right from "./RightSide.module.css";
+import RightLast from "./RightLast";
 import Search from "../Search/Search";
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import WhoToFollow from './WhoToFollow';
-import Heading from './Heading';
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import WhoToFollow from "./WhoToFollow";
+import Heading from "./Heading";
 
 export default function RightSide() {
   const data = [
     {
       Trending: "Trending In India",
-      name: "#Virat Kohli",
-      Tweets: "9,565 tweets"
+      name: "#FunctionUp Student Promoting Twitter",
+      Tweets: "10,565 tweets",
     },
     {
-      Trending: "Bsuiness and finance Trending",
+      Trending: "Bussiness and finance Trending",
       name: "#InvestigateAGIgreenpac",
-      Tweets: "2,014 Tweets"
+      Tweets: "2,014 Tweets",
     },
     {
       Trending: "Entertainment -Trending",
-      name: "#SSMB28",
-      Tweets: "16.9K Tweets"
+      name: "#Leo",
+      Tweets: "16.9K Tweets",
     },
     {
       Trending: "Trending In India",
-      name: "#delhimetro",
-      Tweets: "1,667 Tweets"
-    }
+      name: "#Patnametro",
+      Tweets: "1,667 Tweets",
+    },
   ];
 
   return (
     <div className={Right.start}>
-      <div>
+      <div >
         <Search/>
         <section className={Right.firstComp}>
           <div className={Right.firstcontainer}>
@@ -58,7 +58,7 @@ export default function RightSide() {
         </div>
        <div>
           <RightLast />
-        </div> 
+        </div>
       </div>
     </div>
   );

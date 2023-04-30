@@ -1,17 +1,30 @@
 .start {
   display: flex;
   width:90%;
-  padding: 0 20px ;
+  padding: 0 20px ; 
+  margin-bottom: 2rem;
+  padding-bottom: 20px;
   box-sizing: border-box;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y:scroll;
+  position: sticky;
+  top: 0;
+  bottom: 0;
 }
+.start::-webkit-scrollbar{
+  display: none;
+}
+
 .firstComp {
   background-color: #f5f8fa;
   border-radius: 16px;
   padding: 16px;
   width: 100%;
   margin-bottom:20px;
-
+  box-sizing: border-box;
+}
+.start > div{
+  width:100%;
 }
 
 .firstcontainer {
@@ -80,4 +93,3 @@
   cursor: pointer;
   color: #1da1f2;
 }
-

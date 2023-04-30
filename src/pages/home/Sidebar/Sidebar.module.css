@@ -20,7 +20,8 @@
  .icons p {
   display: flex;
   align-items: center;
-  font-size: 1.375rem ; /* equivalent to 15px */
+  font-weight: 700;
+  font-size: 1rem ; /* equivalent to 15px */
   color: #1c2938;
   padding: 10px;
    /* equivalent to 10px 20px */
@@ -56,4 +57,7 @@
   height: 1.5625rem; /* equivalent to 25px */
   color: #1c2938;
   padding-right: 10px;
+}
+.sidebar__lastButton >span svg{
+  margin-top: 10px;
 }
