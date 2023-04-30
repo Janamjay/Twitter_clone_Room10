@@ -9,25 +9,14 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Button } from "@mui/material";
-import {  useNavigate } from "react-router";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
-
-
-
-
+import { useNavigate } from "react-router";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Sidebar = () => {
-
-
- 
-  
-  
-
-const navigate=useNavigate()
-function handleNavigate(path){
-   navigate(path)
-}
+  const navigate = useNavigate();
+  function handleNavigate(path) {
+    navigate(path);
+  }
 
   return (
     <>
@@ -44,9 +33,7 @@ function handleNavigate(path){
           />
 
           <div className={styles.icons}>
-
-            <p onClick={()=>handleNavigate("/")}>
-
+            <p onClick={() => handleNavigate("/")}>
               <span>
                 <HomeIcon
                   sx={{
@@ -58,62 +45,49 @@ function handleNavigate(path){
               </span>
               Home
             </p>
-
-
-            <p onClick={()=>handleNavigate("/explore")}>
-
+            <p onClick={() => handleNavigate("/explore")}>
               <span>
                 <TagIcon />
               </span>
               Explore
             </p>
 
-
-            <p onClick={()=>handleNavigate("/notifications")}>
-
+            <p onClick={() => handleNavigate("/notifications")}>
               <span>
                 <NotificationsNoneIcon />
               </span>
               Notifications
             </p>
 
-
-            <p onClick={()=>handleNavigate("/messages")}>
+            <p onClick={() => handleNavigate("/messages")}>
               <span>
                 <MailOutlineIcon />
               </span>
               Messages
             </p>
 
-            <p onClick={()=>handleNavigate("/bookmarks")}>
-
+            <p onClick={() => handleNavigate("/bookmarks")}>
               <span>
                 <BookmarkBorderIcon />
               </span>
               Bookmarks
             </p>
 
-
-            <p onClick={()=>handleNavigate("/twitterblue")}>
+            <p onClick={() => handleNavigate("/twitterblue")}>
               <span>
                 <TwitterIcon />
               </span>
               Twitter blue
             </p>
 
-            <p onClick={()=>handleNavigate("/profiles")}>
-
+            <p onClick={() => handleNavigate("/profiles")}>
               <span>
                 <PermIdentityIcon />
               </span>
               profiles
             </p>
 
-
-            <p onClick={()=>handleNavigate("/more")}>
-
-        
-
+            <p onClick={() => handleNavigate("/more")}>
               <span>
                 <MoreHorizIcon />
               </span>
@@ -123,7 +97,6 @@ function handleNavigate(path){
 
           <Button
             className={styles.sidear_button}
-          
             sx={{
               backgroundColor: "#51b6f5",
               color: "white",
@@ -148,31 +121,26 @@ function handleNavigate(path){
             sx={{
               display: "flex",
               alignItems: "left",
-              justifyContent:"left",
+              justifyContent: "left",
               backgroundColor: "transperent",
               color: "#8899a6",
               fontSize: "1rem" /* 16px */,
               fontWeight: "bold",
               textTransform: "none",
+              marginTop: "1.5rem",
               borderRadius: "1.875rem" /* 30px */,
               height: "3.125rem" /* 50px */,
-              // width: "110%",
               paddingLeft: "2rem" /* 32px */,
-
-              marginTop: "3rem",
-
+              // marginTop: "3rem",
             }}
           >
             <AccountCircleIcon
               sx={{
                 marginRight: "1rem",
-                fontSize: "1.25rem" /* 24px */,
-               
+                fontSize: "1rem" /* 16px */,
               }}
             />
-
-            username
-
+            username 
           </Button>
         </div>
       </div>
