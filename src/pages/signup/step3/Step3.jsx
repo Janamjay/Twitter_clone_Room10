@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button,Checkbox } from "@mui/material";
-import { Link } from "react-router-dom";
 import s3 from './step3.module.css'
 
-const Step3 = () => {
+const Step3 = (props) => {
+ 
   return (
     <div className={s3.main_container}>
       <div className={s3.inner_container}>
@@ -16,12 +16,11 @@ const Step3 = () => {
         </div>
         <div className={s3.read}>
             <p>Twitter uses this data to personalize your experience. This web browsing history will never be stored with your name, email, or phone number.</p>
-            <Checkbox defaultChecked />
+            <Checkbox defaultChecked  />
         </div>
         
         <div className={s3.next}>
-          <Link to="/signup?step=4">
-            <Button
+            <Button onClick={props.onClick}
               variant="contained"
               sx={{
                 display: "flex",
@@ -44,7 +43,6 @@ const Step3 = () => {
             >
               Next
             </Button>
-          </Link>
         </div>
       </div>
     </div>
