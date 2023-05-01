@@ -29,6 +29,7 @@ export default function AccountMenu() {
   };
   function handleLogout() {
     localStorage.setItem('isUserLoggedIn', JSON.stringify(false))
+    localStorage.removeItem("login-success")    
     navigate('/login')
   }
 

@@ -38,10 +38,9 @@ const Sidebar = () => {
       );
     } else {
       localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
-      localStorage.removeItem("login-success")
+     
     }
     setTweetMessage("");
-
     setAtomRender(!atomRender);
   }
 

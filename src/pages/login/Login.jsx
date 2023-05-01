@@ -37,8 +37,8 @@ const Login = () => {
         const curUser = JSON.parse(localStorage.getItem("userData")).filter(
           (user) => user.userEmail === email
         );
-        localStorage.setItem("login-success", "true");
         localStorage.setItem("currentUser", JSON.stringify(...curUser));
+        localStorage.setItem("login-success", "true");
         nav("/");
       }
     } else {
