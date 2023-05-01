@@ -14,7 +14,7 @@ import { Dialog, DialogContent} from "@mui/material";
 import UserLogout from '../Logout/UserLogout'
 import Tweet from "../Tweet/Tweet";
 import { useRecoilState } from "recoil";
-import { reRender } from "../../../atom/rerender";
+import { reRender } from "../../../atom/reRender";
 
 const Sidebar = () => {
   const navigate = useNavigate();
