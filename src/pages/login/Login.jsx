@@ -35,6 +35,11 @@ const Login = () => {
       } else {
         swal("Great Job !!", "You are Successfully Login!!", "success");
         localStorage.setItem("login-success", "true");
+        const curUser = JSON.parse(localStorage.getItem("userData")).filter(
+          (user) => user.userEmail === email
+        );
+
+        localStorage.setItem("currentUser", JSON.stringify(...curUser));
         nav("/");
       }
     } else {
@@ -184,7 +189,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
