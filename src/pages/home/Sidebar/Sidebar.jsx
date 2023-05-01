@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Sidebar.module.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import HomeIcon from "@mui/icons-material/Home";
@@ -22,8 +22,6 @@ const Sidebar = () => {
   function handleNavigate(path) {
     navigate(path);
   }
-
-  const Users = JSON.parse(localStorage.getItem("userData")) || [];
 
   function handleTweetClick() {
     setShowTweetBox(true); // show the Tweet component
@@ -167,7 +165,7 @@ const Sidebar = () => {
                 fontSize: "1rem",
               }}
             />
-            <span>userFullName</span>
+            <span>users</span>
             <span>
               <MoreHorizIcon />
             </span>
