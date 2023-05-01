@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import styles from "./Sidebar.module.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import HomeIcon from "@mui/icons-material/Home";
@@ -10,32 +10,48 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Dialog, DialogContent, Popover } from "@mui/material";
+import { Dialog, DialogContent} from "@mui/material";
+import UserLogout from '../Logout/UserLogout'
 import Tweet from "../Tweet/Tweet";
+import { useRecoilState } from "recoil";
+import { reRender } from "../../../atom/rerender";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const [showTweetBox, setShowTweetBox] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [showTweetBox, setShowTweetBox] = useState(false); const [atomRender, setAtomRender] = useRecoilState(reRender);
 
+  function handleTweet() {
+    setShowTweetBox(true)
+    const newTweet = {
+      content: tweetMessage,
+      likeCount: 0,
+      commentCount: 0,
+      reTweetCount: 0,
+      isLike: false,
+    };
+    const oldTweetList = JSON.parse(localStorage.getItem("userTweetList"));
 
+    if (oldTweetList) {
+      localStorage.setItem(
+        "userTweetList",
+        JSON.stringify([newTweet, ...oldTweetList])
+      );
+    } else {
+      localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
+    }
+    setTweetMessage("");
 
+    setAtomRender(!atomRender);
+  }
 
   function handleNavigate(path) {
     navigate(path);
   }
 
-  const Users = JSON.parse(localStorage.getItem("userData")) || [];
+  // function handleTweetClick() {
+  //   setShowTweetBox(true); // show the Tweet component
+  // }
 
-  function handleTweetClick() {
-    setShowTweetBox(true); // show the Tweet component
-  }
-
-  function handleLogout() {
-    localStorage.removeItem("login-success");
-    navigate("/login");
-  }
   return (
     <>
       <div className={styles.Sidebar}>
@@ -115,7 +131,7 @@ const Sidebar = () => {
 
           <Button
             className={styles.sidear_button}
-            onClick={handleTweetClick}
+            onClick={handleTweet}
             sx={{
               backgroundColor: "#51b6f5",
               color: "white",
@@ -145,51 +161,7 @@ const Sidebar = () => {
               <Tweet />
             </DialogContent>
           </Dialog>
-
-          <Button
-            className={styles.sidebar__lastButton}
-            onClick={(e) => setAnchorEl(e.currentTarget)}
-            sx={{
-              display: "flex",
-              alignItems: "left",
-              justifyContent: "left",
-              backgroundColor: "transperent",
-              color: "#8899a6",
-              fontSize: "1rem" /* 16px */,
-              fontWeight: "bold",
-              textTransform: "none",
-              borderRadius: "1.875rem" /* 30px */,
-              height: "3.125rem" /* 50px */,
-              paddingLeft: "2rem",
-              marginTop: "3rem",
-            }}
-          >
-            <AccountCircleIcon
-              sx={{
-                marginRight: "1rem",
-                fontSize: "1rem",
-              }}
-            />
-            <span>{Users[0].userFullName}</span>
-            <span>
-              <MoreHorizIcon />
-            </span>
-            <Popover
-              open={Boolean(anchorEl)}
-              anchorEl={anchorEl}
-              onClose={() => setAnchorEl(null)}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-            >
-              <Button onClick={() => handleLogout()}>Logout</Button>
-            </Popover>
-          </Button>
+            <UserLogout/>
         </div>
       </div>
     </>
