@@ -1,7 +1,7 @@
 .feeds_main_container{
     padding: 10px ;
     padding-right: 20px;
-    /* border-bottom: 1px solid gray; */
+    border-bottom: 1px solid gray;
     display: flex;
 }
 .feeds_main_container:hover{

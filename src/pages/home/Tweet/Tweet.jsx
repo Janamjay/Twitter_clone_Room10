@@ -8,19 +8,35 @@ import EditCalendarOutlinedIcon from "@mui/icons-material/EditCalendarOutlined";
 import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlined";
 import Textarea from "@mui/joy/Textarea";
 import styles from "./Tweet.module.css";
+import { useRecoilState } from "recoil";
+import { reRender } from "../../../atom/rerender";
 
 export default function Tweet() {
   const [tweetMessage, setTweetMessage] = useState("");
-  const [tweets, setTweets] = useState([]);
+  const [atomRender, setAtomRender] = useRecoilState(reRender);
 
   function handleTweet() {
-    if (tweetMessage.trim() !== "") {
-      // only add the tweet if it's not empty
-      setTweets([...tweets, tweetMessage]); // add the new tweet to the list of tweets
-      setTweetMessage(""); // clear the tweet message input field
-    }
-  }
+    const newTweet = {
+      content: tweetMessage,
+      likeCount: 0,
+      commentCount: 0,
+      reTweetCount: 0,
+      isLike: false,
+    };
+    const oldTweetList = JSON.parse(localStorage.getItem("userTweetList"));
 
+    if (oldTweetList) {
+      localStorage.setItem(
+        "userTweetList",
+        JSON.stringify([newTweet, ...oldTweetList])
+      );
+    } else {
+      localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
+    }
+    setTweetMessage("");
+
+    setAtomRender(!atomRender);
+  }
   return (
     <div className={styles.tweetBox}>
       <div className={styles.tweetInput}>
@@ -75,9 +91,9 @@ export default function Tweet() {
 
         <Button
           className={styles.tweetButton}
+          onClick={handleTweet}
           variant="contained"
           size="small"
-          onClick={handleTweet}
           sx={{
             borderRadius: "50px",
             marginTop: "0",
@@ -88,29 +104,6 @@ export default function Tweet() {
         >
           Tweet
         </Button>
-      </div>
-
-      <div className={styles.tweetsContainer}>
-        {tweets.map((tweet, index) => (
-          <div key={index} className={styles.tweet}>
-            <div className={styles.tweetAvatar}>
-              <Avatar
-                alt="Sourav Ganguly"
-                src="https://gumlet.assettype.com/barandbench%2F2021-07%2F3e25a27f-d4e1-4f11-a28f-ebfb9e04c84c%2Fsourav.jpg?auto=format%2Ccompress&fit=max&w=1200"
-                size="md"
-              />
-            </div>
-            <div className={styles.tweetContent}>
-              <div className={styles.tweetHeader}>
-                <h3 className={styles.tweetUsername}>Sourav Ganguly</h3>
-                <p className={styles.tweetTime}>3h</p>
-              </div>
-              <div className={styles.tweetBody}>
-                <p>{tweet}</p>
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );
