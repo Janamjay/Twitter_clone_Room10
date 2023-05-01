@@ -19,9 +19,6 @@ const Sidebar = () => {
   const [showTweetBox, setShowTweetBox] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
-
-
-
   function handleNavigate(path) {
     navigate(path);
   }
@@ -170,7 +167,7 @@ const Sidebar = () => {
                 fontSize: "1rem",
               }}
             />
-            <span>{Users[0].userFullName}</span>
+            <span>userFullName</span>
             <span>
               <MoreHorizIcon />
             </span>
