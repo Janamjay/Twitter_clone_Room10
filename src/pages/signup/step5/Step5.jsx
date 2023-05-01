@@ -25,9 +25,10 @@ const Step5 = () => {
     }
       setGobalData({...globalData,...user});
       setGobalUser([...globalUser,globalData]);
-      localStorage.setItem("userData",JSON.stringify([...globalUser,{...globalData,...user}])); 
+      const oldData = JSON.parse(localStorage.getItem("userData")) || []
+      localStorage.setItem("userData",JSON.stringify([...oldData,{...globalData,...user}])); 
       swal("Hurray!", "You Successfully Registered!", "success");
-      nav("/")  
+      nav("/login")  
      
     }
    
