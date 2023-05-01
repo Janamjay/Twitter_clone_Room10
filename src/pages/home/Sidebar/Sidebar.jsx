@@ -14,7 +14,7 @@ import { Dialog, DialogContent} from "@mui/material";
 import UserLogout from '../Logout/UserLogout'
 import Tweet from "../Tweet/Tweet";
 import { useRecoilState } from "recoil";
-import { reRender } from "../../../atom/rerender";
+import { reRender } from "../../../atom/reRender";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -38,6 +38,7 @@ const Sidebar = () => {
       );
     } else {
       localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
+      localStorage.removeItem("login-success")
     }
     setTweetMessage("");
 
@@ -48,9 +49,6 @@ const Sidebar = () => {
     navigate(path);
   }
 
-  // function handleTweetClick() {
-  //   setShowTweetBox(true); // show the Tweet component
-  // }
 
   return (
     <>

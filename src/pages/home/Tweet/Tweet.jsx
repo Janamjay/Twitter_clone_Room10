@@ -9,7 +9,7 @@ import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlin
 import Textarea from "@mui/joy/Textarea";
 import styles from "./Tweet.module.css";
 import { useRecoilState } from "recoil";
-import { reRender } from "../../../atom/rerender";
+import { reRender } from "../../../atom/reRender";
 
 export default function Tweet() {
   const [tweetMessage, setTweetMessage] = useState("");
@@ -34,7 +34,6 @@ export default function Tweet() {
       localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
     }
     setTweetMessage("");
-
     setAtomRender(!atomRender);
   }
   return (
