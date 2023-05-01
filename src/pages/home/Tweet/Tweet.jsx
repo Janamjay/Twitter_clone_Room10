@@ -34,7 +34,6 @@ export default function Tweet() {
       localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
     }
     setTweetMessage("");
-
     setAtomRender(!atomRender);
   }
   return (

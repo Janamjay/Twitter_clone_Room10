@@ -34,11 +34,10 @@ const Login = () => {
         setPassword("");
       } else {
         swal("Great Job !!", "You are Successfully Login!!", "success");
-        localStorage.setItem("login-success", "true");
         const curUser = JSON.parse(localStorage.getItem("userData")).filter(
           (user) => user.userEmail === email
         );
-
+        localStorage.setItem("login-success", "true");
         localStorage.setItem("currentUser", JSON.stringify(...curUser));
         nav("/");
       }

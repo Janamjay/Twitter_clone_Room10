@@ -38,6 +38,7 @@ const Sidebar = () => {
       );
     } else {
       localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
+      localStorage.removeItem("login-success")
     }
     setTweetMessage("");
 
@@ -48,9 +49,6 @@ const Sidebar = () => {
     navigate(path);
   }
 
-  // function handleTweetClick() {
-  //   setShowTweetBox(true); // show the Tweet component
-  // }
 
   return (
     <>
