@@ -9,7 +9,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import { useRecoilState } from "recoil";
-import { reRender } from "../../../atom/rerender";
+import { reRender } from '../../../atom/reRender';
 
 export default function Feeds() {
   const [likeCount, setLikeCount] = useState(0);
