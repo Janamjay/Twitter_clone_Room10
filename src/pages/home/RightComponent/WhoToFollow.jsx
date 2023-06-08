@@ -1,20 +1,81 @@
-import React, { useState } from 'react';
-import Who from './WhoToFollow.module.css'
+import React, { useState } from "react";
+import Who from "./WhoToFollow.module.css";
 function WhoToFollow() {
+  const [itemsToShow, setItemsToShow] = useState(3);
   const [users, setUsers] = useState([
     {
-      image: "https://pbs.twimg.com/profile_images/1649977054744674311/Tapx1as2_400x400.jpg",
-      name: 'Royal Challenger Bangalore', username: 'RCBIpl', following: false
+      image:
+        "https://pbs.twimg.com/profile_images/1649977054744674311/Tapx1as2_400x400.jpg",
+      name: "Royal Challenger Bangalore",
+      username: "RCBIpl",
+      following: false,
     },
     {
-      image: " https://pbs.twimg.com/profile_images/1631576724461715456/IhEY3WKZ_400x400.png",
-      name: 'FunctionUp', username: 'functionUp_cohert', following: false
+      image:
+        " https://pbs.twimg.com/profile_images/1631576724461715456/IhEY3WKZ_400x400.png",
+      name: "FunctionUp",
+      username: "functionUp_cohert",
+      following: false,
     },
     {
-      image: "https://www.indiaonlinepages.com/sports/gifs/sachin-tendulkar.jpg", name: 'Sachin Tendulakr'
-      , username: 'sachin_rt', following: false
+      image:
+        "https://www.indiaonlinepages.com/sports/gifs/sachin-tendulkar.jpg",
+      name: "Sachin Tendulakr",
+      username: "sachin_rt",
+      following: false,
+    },
+    {
+      image:
+        "https://pbs.twimg.com/profile_images/1649977054744674311/Tapx1as2_400x400.jpg",
+      name: "Royal Challenger Bangalore",
+      username: "RCBIpl",
+      following: false,
+    },
+    {
+      image:
+        " https://pbs.twimg.com/profile_images/1631576724461715456/IhEY3WKZ_400x400.png",
+      name: "FunctionUp",
+      username: "functionUp_cohert",
+      following: false,
+    },
+    {
+      image:
+        "https://www.indiaonlinepages.com/sports/gifs/sachin-tendulkar.jpg",
+      name: "Sachin Tendulakr",
+      username: "sachin_rt",
+      following: false,
+    },
+    {
+      image:
+        "https://pbs.twimg.com/profile_images/1649977054744674311/Tapx1as2_400x400.jpg",
+      name: "Royal Challenger Bangalore",
+      username: "RCBIpl",
+      following: false,
+    },
+    {
+      image:
+        " https://pbs.twimg.com/profile_images/1631576724461715456/IhEY3WKZ_400x400.png",
+      name: "FunctionUp",
+      username: "functionUp_cohert",
+      following: false,
+    },
+    {
+      image:
+        "https://www.indiaonlinepages.com/sports/gifs/sachin-tendulkar.jpg",
+      name: "Sachin Tendulakr",
+      username: "sachin_rt",
+      following: false,
     },
   ]);
+
+  const showMore = () => {
+    setItemsToShow(users.length);
+  };
+
+  const showLess = () => {
+    setItemsToShow(3);
+  };
+
   const toggleFollowing = (username) => {
     // Create a new array with the updated follow status for the specified user
     const updatedUsers = users.map((user) => {
@@ -33,10 +94,10 @@ function WhoToFollow() {
         <h2>Who to follow</h2>
       </div>
       <div className={Who.userDataPart}>
-        {users.map((user,i) => {
+        {users.slice(0, itemsToShow).map((user, i) => {
           return (
             <div key={i}>
-              <ul >
+              <ul>
                 <li>
                   <img src={user.image} alt={`${user.username}`} width="20%" />
                   <span>
@@ -49,10 +110,19 @@ function WhoToFollow() {
                 </li>
               </ul>
             </div>
-          )
+          );
         })}
       </div>
-      <button className={Who.Middlebtn}>Show more</button>
+
+      {users.length > 3 && itemsToShow < users.length ? (
+        <button className={Who.Middlebtn} onClick={showMore}>
+          Show More
+        </button>
+      ) : (
+        <button className={Who.Middlebtn} onClick={showLess}>
+          Show Less
+        </button>
+      )}
     </div>
   );
 }
