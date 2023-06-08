@@ -71,6 +71,13 @@ Contributions are welcome and appreciated! If you'd like to contribute to this p
 
 5. Submit a pull request describing your changes.
 
+
+ ## Collebrators
+  - Samruddhi kshirsagar   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    ```  fn-nob-52UCE ```
+  - Janamjay Kumar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ```fn-nob-95CTX```
+  - Madhumita Chaudhuri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ``` fn-nob-23ZMB ```
+  - Krushna Gaikwad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``` fn-nob-66LJB ```
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Janamjay/Twitter_clone_room10/blob/main/LICENSE) file for more information.
